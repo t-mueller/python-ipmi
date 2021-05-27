@@ -1,0 +1,15 @@
+name: Test
+
+on: [workflow_dispatch]
+
+jobs:
+  tests:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.6", "3.7", "3.8", "3.9", "pypy3"]
+
+    steps:
+      - uses: actions/checkout@master
